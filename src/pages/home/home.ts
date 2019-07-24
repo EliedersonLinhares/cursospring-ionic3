@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, IonicPage } from 'ionic-angular';
+import { NavController, IonicPage, MenuController } from 'ionic-angular';
 
 //@Ionic-Page: informa para a aplicação que essa classe que ela
 //é uma pagina, e que ela pode ser referenciada pelo nome
@@ -15,9 +15,19 @@ export class HomePage {
   //instancia de um objeto de uma classe, basta voce declarar
   //esse objeto como parametro do seu construtor
   // objeto navCtrl do tipo NavController
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public menu: MenuController) {
 
   }
+
+  //desabilta o menu lateral quando entra na tela de login
+  ionViewWillEnter() {
+    this.menu.swipeEnable(false);
+    }
+   
+  //Abilita o menu latral quando sair da pagina de login  
+  ionViewDidLeave() {
+    this.menu.swipeEnable(true);
+    }
 
    login(){
      //no typeScript é obrigatorio o uso do this para acessar
