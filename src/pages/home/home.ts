@@ -11,8 +11,18 @@ import { NavController, IonicPage } from 'ionic-angular';
 })
 export class HomePage {
 
+  //Objeto injetado, no ionic e no angular quando você precisa injetar uma
+  //instancia de um objeto de uma classe, basta voce declarar
+  //esse objeto como parametro do seu construtor
+  // objeto navCtrl do tipo NavController
   constructor(public navCtrl: NavController) {
 
   }
+
+   login(){
+     //no typeScript é obrigatorio o uso do this para acessar
+     //o objto do construtor
+     this.navCtrl.setRoot('CategoriasPage')
+   }
 
 }

@@ -15,8 +15,13 @@
           <ion-label stacked>Senha</ion-label>
           <ion-input type="password"></ion-input>
         </ion-item>
-
-       <button ion-button block>Entrar</button>
+         
+        <!-- O parenteses '()' no angular significa o 
+        Binding de eventos mostrando o evento de click
+        do botão execute o metodo login do controlador
+        correspondente dessa página
+        -->
+       <button ion-button block (click)="login()">Entrar</button>
 
   </form>
         <button ion-button block outline>Registrar</button> 
